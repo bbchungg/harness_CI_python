@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_bbchungg_harness_CI_python_1735598720601-pr-trigger-input-set
+  identifier: Build_bbchungg_harness_CI_python_1735598720601prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_bbchungg_harness_CI_python_1735598720601
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
