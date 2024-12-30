@@ -9,6 +9,8 @@ pipeline:
         build: <+input>
         connectorRef: account.Github_OAuth_1735597748724
         repoName: bbchungg/harness_CI_python
+        envVariables:
+          GIT_DISCOVERY_ACROSS_FILESYSTEM: "1"
   stages:
     - stage:
         identifier: build
