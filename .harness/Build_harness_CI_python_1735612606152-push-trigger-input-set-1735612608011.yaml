@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_harness_CI_python_1735612606152-push-trigger-input-set
+  identifier: Build_harness_CI_python_1735612606152pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_harness_CI_python_1735612606152
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
