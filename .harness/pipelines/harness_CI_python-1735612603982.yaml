@@ -24,7 +24,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: bjc77731
+                    connectorRef: bjc777312
                     repo: bjc77731/harness_ci_python
                     tags:
                       - latest
