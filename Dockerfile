@@ -1,19 +1,22 @@
 FROM python:3.9.1-alpine
 MAINTAINER Greg Taylor <gtaylor@gc-taylor.com>
 
+# Upgrade pip and tools
 RUN pip install --upgrade pip setuptools wheel
-COPY wheeldir /opt/app/wheeldir
-# These are copied and installed first in order to take maximum advantage
-# of Docker layer caching (if enabled).
-COPY *requirements.txt /opt/app/src/
-RUN pip install --use-wheel --no-index --find-links=/opt/app/wheeldir \
-    -r /opt/app/src/requirements.txt
-RUN pip install --use-wheel --no-index --find-links=/opt/app/wheeldir \
-    -r /opt/app/src/test-requirements.txt
 
+# Copy requirements and install dependencies
+COPY *requirements.txt /opt/app/src/
+RUN pip install -r /opt/app/src/requirements.txt
+
+# Copy application source code
 COPY . /opt/app/src/
 WORKDIR /opt/app/src
+
+# Install the application
 RUN python setup.py install
 
+# Expose the Flask port
 EXPOSE 5000
-CMD dronedemo
+
+# Run the application
+CMD ["dronedemo"]
