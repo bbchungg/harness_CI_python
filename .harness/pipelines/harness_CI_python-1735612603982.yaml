@@ -24,10 +24,11 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: bjc777312
-                    repo: bjc77731/harness_ci_python
+                    connectorRef: bjc77731
+                    repo: bjc77731/harness-python-ci
                     tags:
                       - latest
+                      - 1.0.0
                     caching: true
           infrastructure:
             type: KubernetesDirect
